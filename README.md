@@ -1,6 +1,5 @@
 # AdAdmin - Easy full featured ad server
-AdAdmin public discussion for add ons and improvements
-======================================================
+## AdAdmin public discussion for add ons and improvements
 
 AdAdmin is a banner manager, an ads management platform, an ad server.
 Sell banners and manage ads, track every view and every click, handle campaigns, positions and clients.
