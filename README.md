@@ -1,4 +1,4 @@
-[![Boss Bounty Badge](https://img.shields.io/endpoint.svg?url=https://api.boss.dev/badge/enabled/giuliopons/adadmin)](https://www.boss.dev/issues/repo/giuliopons/adadmin)
+
 # AdAdmin - Easy full featured ad server
 ## AdAdmin public discussion for add ons and improvements
 
