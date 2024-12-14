@@ -15,3 +15,5 @@ Feature requests and discussions here:
 
 https://github.com/giuliopons/adadmin/issues
 
+Full user documentation here:
+https://www.barattalo.it/amb/src/componenti/docs/
