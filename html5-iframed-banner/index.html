@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<script>
+		/*
+		------------------------------------------------------------
+		CONFIG HERE
+		------------------------------------------------------------
+		*/
+
+		// CLICKTAG
+		var clickTag = "https://www.barattalo.it/amb/tra.php?b=163&c=9bef693349c39f740d520aa3cb39e485";
+
+		// BANNER ASPECT RATIO
+		var aspectRatio = 970/250;
+
+
+
+
+
+		/*
+		------------------------------------------------------------
+		DONT' TOUCH, handles communication with parent to properly resize the iframe
+		------------------------------------------------------------
+		*/
+		const urlParams = new URLSearchParams(window.location.search);
+		const iframeid = urlParams.get('id');
+		function adjust_container_by_width(w) {
+			var h = parseInt(w / aspectRatio);
+			var c = document.getElementById("container");
+			c.style.width = w + 'px';
+			c.style.height = h + 'px';
+		} 
+		function adjust_container_height(){
+			var w = document.body.scrollWidth;
+			var h = parseInt(w / aspectRatio);
+			var c = document.getElementById("container");
+			if(typeof(window.resdefined)=="undefined"){
+				window.resdefined = true;
+				window.onresize = adjust_container_height;
+			} else {
+				c.style.width = w + 'px';
+				c.style.height = h + 'px';
+			}
+			parent.postMessage({ "nh": h, "me": iframeid },"*");
+		}
+		window.addEventListener("load", (event) => { adjust_container_height() });
+		window.addEventListener("message", function(event) {
+			if (event.data.resized && event.data.me == iframeid) {
+				adjust_container_by_width( parseInt(event.data.resized) );
+			}
+		});
+		/*
+		------------------------------------------------------------
+		DONT' TOUCH, handles communication with parent to properly resize the iframe
+		------------------------------------------------------------
+		*/
+
+	</script>
+	
+
+
+    <link rel='stylesheet' href='style.css' type='text/css' media='all' />
+
+
+</head>
+<body>
+
+	<!-- YOUR HTML INSIDE A DIV WITH ID = "container" -->
+	<div id="container">
+		<span>This is a HTML banner inside an iframe</span>
+		<button onclick="myFunction()">Click me</button>
+	</div>
+
+
+
+
+
+	<!-- YOUR SCRIPT -->
+	<script src="script.js"></script>
+	
+
+
+
+	<!--
+		
+		if you have additional script to add to track impressions you can add them here below the container
+
+	 -->
+
+
+</body>
+</html>
