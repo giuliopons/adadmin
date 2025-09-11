@@ -23,3 +23,6 @@ https://www.barattalo.it/amb/src/componenti/docs/
 24-04-2025 - Added new examples to make video banners and iframe javascript banners
 - html5-iframed-banner
 - html5-iframed-video-banner
+
+## Note
+Since july of 2025 the system has a built in video banner type, so you don't need the html5-iframe-video-banner anymore.
